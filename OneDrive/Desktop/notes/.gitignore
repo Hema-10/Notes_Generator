@@ -6,21 +6,113 @@ yarn-error.log*
 
 # Database
 notes.db
+*.db
 
 # OS
 .DS_Store
 Thumbs.db
+desktop.ini
+.directory
 
 # IDE
 .vscode/
 .idea/
 *.swp
 *.swo
+*.sublime-*
+.eclipse/
+.classpath
+.project
+.settings/
 
 # Environment
 .env
 .env.local
+.env.*.local
 
 # Logs
 logs/
 *.log
+dist/
+build/
+
+# Temp & cache
+.cache/
+.tmp/
+temp/
+*.bak
+*~
+
+# OS junk files
+.DS_Store
+.AppleDouble
+.LSOverride
+$RECYCLE.BIN/
+ehthumbs.db
+Thumbs.db
+
+# NPM cache
+.npm
+package-lock.json
+
+# Node.js bindings
+*.node
+build/
+
+# IDEs and editors
+/.vscode
+.vscode
+*.code-workspace
+.idea/
+*.iml
+.netbeans
+.c9/
+*.launch
+.settings/
+.classpath
+.project
+
+# Misc
+.npm
+.yarn
+.eslintcache
+.node_repl_history
+*.tgz
+.yarn-integrity
+.cache
+.parcel-cache
+.next
+out
+.nuxt
+dist
+.cache/
+.vuepress/dist
+.serverless/
+.fusebox/
+.dynamodb/
+.env.test
+
+# OS generated files
+*.swp
+*~
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+.DocumentRevisions-V100
+.fseventsd
+.TemporaryItems
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+*.exe
+*.bat
+*.cmd
