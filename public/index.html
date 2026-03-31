@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AI-powered notes generator - Extract keywords and create summaries from text">
+  <meta name="theme-color" content="#667eea">
+  
+  <title>Notes Generator - Chat Interface</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Main Chat Container -->
+  <div class="chat-container" role="main">
+    
+    <!-- Left Sidebar: Saved Notes List -->
+    <aside class="notes-sidebar" role="region" aria-label="Saved notes">
+      <div class="sidebar-header">
+        <h2>📋 Saved Notes</h2>
+        <button class="new-chat-btn" id="newChatBtn" aria-label="Start a new chat">
+          + New Chat
+        </button>
+      </div>
+      <!-- Notes list populated by JavaScript -->
+      <div id="notesList" class="notes-list" role="list">
+        <p class="empty-state">No notes yet</p>
+      </div>
+    </aside>
+
+    <!-- Right Main: Chat Interface -->
+    <main class="chat-main">
+      <!-- Chat Header Section -->
+      <header class="chat-header">
+        <h1>🤖 Notes Generator</h1>
+        <p>Transform your text into structured, keyword-rich notes with AI assistance</p>
+      </header>
+
+      <!-- Messages Display Area -->
+      <section id="chatMessages" class="chat-messages" role="log" aria-label="Chat messages">
+        <article class="welcome-message">
+          <h3>Welcome to Notes Generator!</h3>
+          <section>
+            <h4>How it works:</h4>
+            <ul>
+              <li>📝 Share a paragraph, idea, or topic</li>
+              <li>🤖 AI extracts keywords and generates a summary</li>
+              <li>✏️ Review and edit before saving</li>
+              <li>💾 Keep all your notes organized</li>
+            </ul>
+          </section>
+          <p><em>Tip: You can refine the output by asking for changes.</em></p>
+        </article>
+      </section>
+
+      <!-- Input Section -->
+      <section class="chat-input-area" aria-label="Input area">
+        <div class="input-wrapper">
+          <textarea 
+            id="promptInput" 
+            class="chat-input" 
+            placeholder="Paste a paragraph or describe what you want in a note... (Shift+Enter for new line)"
+            rows="3"
+            aria-label="Text input for generating notes"
+          ></textarea>
+          <button id="sendBtn" class="send-btn" aria-label="Send message">
+            Send →
+          </button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Modal Dialog: Review and Save Note -->
+  <dialog id="noteModal" class="modal" aria-labelledby="modalTitle">
+    <div class="modal-content">
+      <button class="close" id="closeModalBtn" aria-label="Close dialog">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      
+      <h2 id="modalTitle">Review & Save Note</h2>
+      
+      <!-- Note Title Input -->
+      <div class="form-group">
+        <label for="modalTitle">Title:</label>
+        <input 
+          type="text" 
+          id="modalTitle" 
+          placeholder="Enter note title..." 
+          class="modal-input"
+          aria-required="true"
+        >
+      </div>
+
+      <!-- Note Content Input -->
+      <div class="form-group">
+        <label for="modalContent">Content:</label>
+        <textarea 
+          id="modalContent" 
+          placeholder="Note content..." 
+          class="modal-textarea"
+          aria-required="true"
+        ></textarea>
+      </div>
+
+      <!-- Keywords Display -->
+      <section class="keywords-section">
+        <h3>Keywords:</h3>
+        <div id="modalKeywords" class="keywords-list" role="list" aria-label="Extracted keywords">
+          <!-- Populated by JavaScript -->
+        </div>
+      </section>
+
+      <!-- Modal Action Buttons -->
+      <div class="modal-buttons">
+        <button id="saveNoteBtn" class="btn btn-primary">
+          💾 Save Note
+        </button>
+        <button id="cancelModalBtn" class="btn btn-secondary">
+          Cancel
+        </button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Main Application Script -->
+  <script src="index.js" defer></script>
+</body>
+</html>
