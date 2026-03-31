@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notes Generator - Chat</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="chat-container">
+    <!-- Sidebar with saved notes -->
+    <aside class="notes-sidebar">
+      <div class="sidebar-header">
+        <h2>📋 Saved Notes</h2>
+        <button class="new-chat-btn" id="newChatBtn">+ New Chat</button>
+      </div>
+      <div id="notesList" class="notes-list">
+        <p class="empty-state">No notes yet</p>
+      </div>
+    </aside>
+
+    <!-- Main Chat Area -->
+    <main class="chat-main">
+      <div class="chat-header">
+        <h1>🤖 Notes Generator</h1>
+        <p>Describe what you want in a note - I'll help you create it!</p>
+      </div>
+
+      <div id="chatMessages" class="chat-messages">
+        <div class="welcome-message">
+          <h3>Welcome to Notes Generator!</h3>
+          <p>Share a paragraph, idea, or topic and I'll automatically generate a well-structured note with keywords extracted.</p>
+          <p>You can refine the output by asking for changes.</p>
+        </div>
+      </div>
+
+      <div class="chat-input-area">
+        <div class="input-wrapper">
+          <textarea 
+            id="promptInput" 
+            class="chat-input" 
+            placeholder="Paste a paragraph or describe what you want in a note... (use Shift+Enter for new line)"
+            rows="3"
+          ></textarea>
+          <button id="sendBtn" class="send-btn">Send</button>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Modal for editing notes before saving -->
+  <div id="noteModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Review & Save Note</h2>
+      <input type="text" id="modalTitle" placeholder="Note title..." class="modal-input">
+      <textarea id="modalContent" placeholder="Note content..." class="modal-textarea"></textarea>
+      <div class="keywords-section">
+        <label>Keywords:</label>
+        <div id="modalKeywords" class="keywords-list"></div>
+      </div>
+      <div class="modal-buttons">
+        <button id="saveNoteBtn" class="btn btn-primary">Save Note</button>
+        <button id="closeModalBtn" class="btn btn-secondary">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>
