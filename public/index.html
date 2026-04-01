@@ -6,18 +6,79 @@
   <meta name="description" content="AI-powered notes generator - Extract keywords and create summaries from text">
   <meta name="theme-color" content="#667eea">
   
-  <title>Notes Generator - Chat Interface</title>
+  <title>Notes Generator - Team</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <!-- Main Chat Container -->
-  <div class="chat-container" role="main">
+  <!-- Team Frontpage -->
+  <div class="frontpage-container" role="main">
+    <!-- Team Section -->
+    <section class="team-section">
+      <div class="team-content">
+        <header class="team-header">
+          <h1>Our Team</h1>
+          <p class="team-subtitle">Meet the brilliant minds behind Notes Generator</p>
+        </header>
+
+        <!-- Team Members List with Numbering -->
+        <ol class="team-list">
+          <li class="team-member-row">
+            <div class="member-info">
+              <h3 class="member-name">1. Abivarthan</h3>
+              <p class="member-role">Backend Developer</p>
+              <p class="member-work">API Development & Server</p>
+            </div>
+          </li>
+
+          <li class="team-member-row">
+            <div class="member-info">
+              <h3 class="member-name">2. Allwin Jerome</h3>
+              <p class="member-role">Frontend Developer</p>
+              <p class="member-work">UI Implementation & Chat Interface</p>
+            </div>
+          </li>
+
+          <li class="team-member-row">
+            <div class="member-info">
+              <h3 class="member-name">3. Syam</h3>
+              <p class="member-role">Project Lead</p>
+              <p class="member-work">Project Coordination & Testing</p>
+            </div>
+          </li>
+
+          <li class="team-member-row">
+            <div class="member-info">
+              <h3 class="member-name">4. Dinesha G</h3>
+              <p class="member-role">UI/UX Designer</p>
+              <p class="member-work">Design System & User Experience</p>
+            </div>
+          </li>
+
+          <li class="team-member-row">
+            <div class="member-info">
+              <h3 class="member-name">5. Hemapriya P</h3>
+              <p class="member-role">Database Manager</p>
+              <p class="member-work">Database Design & Optimization</p>
+            </div>
+          </li>
+        </ol>
+
+        <!-- CTA Button -->
+        <button class="cta-button" id="enterAppBtn" aria-label="Enter the Notes Generator app">
+          Enter App
+        </button>
+      </div>
+    </section>
+  </div>
+
+  <!-- Hidden Chat Container (shown after entering app) -->
+  <div class="chat-container" id="chatContainer" style="display: none;" role="main">
     
     <!-- Left Sidebar: Saved Notes List -->
     <aside class="notes-sidebar" role="region" aria-label="Saved notes">
       <div class="sidebar-header">
-        <h2>📋 Saved Notes</h2>
+        <h2>Saved Notes</h2>
         <button class="new-chat-btn" id="newChatBtn" aria-label="Start a new chat">
           + New Chat
         </button>
@@ -32,7 +93,7 @@
     <main class="chat-main">
       <!-- Chat Header Section -->
       <header class="chat-header">
-        <h1>🤖 Notes Generator</h1>
+        <h1>Notes Generator</h1>
         <p>Transform your text into structured, keyword-rich notes with AI assistance</p>
       </header>
 
@@ -43,10 +104,10 @@
           <section>
             <h4>How it works:</h4>
             <ul>
-              <li>📝 Share a paragraph, idea, or topic</li>
-              <li>🤖 AI extracts keywords and generates a summary</li>
-              <li>✏️ Review and edit before saving</li>
-              <li>💾 Keep all your notes organized</li>
+              <li>Share a paragraph, idea, or topic</li>
+              <li>AI extracts keywords and generates a summary</li>
+              <li>Review and edit before saving</li>
+              <li>Keep all your notes organized</li>
             </ul>
           </section>
           <p><em>Tip: You can refine the output by asking for changes.</em></p>
@@ -64,7 +125,7 @@
             aria-label="Text input for generating notes"
           ></textarea>
           <button id="sendBtn" class="send-btn" aria-label="Send message">
-            Send →
+            Send
           </button>
         </div>
       </section>
@@ -82,10 +143,10 @@
       
       <!-- Note Title Input -->
       <div class="form-group">
-        <label for="modalTitle">Title:</label>
+        <label for="noteTitleInput">Title:</label>
         <input 
           type="text" 
-          id="modalTitle" 
+          id="noteTitleInput" 
           placeholder="Enter note title..." 
           class="modal-input"
           aria-required="true"
@@ -113,17 +174,12 @@
 
       <!-- Modal Action Buttons -->
       <div class="modal-buttons">
-        <button id="saveNoteBtn" class="btn btn-primary">
-          💾 Save Note
-        </button>
-        <button id="cancelModalBtn" class="btn btn-secondary">
-          Cancel
-        </button>
+        <button id="saveNoteBtn" class="btn btn-primary">Save Note</button>
+        <button id="cancelModalBtn" class="btn btn-secondary">Cancel</button>
       </div>
     </div>
   </dialog>
 
-  <!-- Main Application Script -->
-  <script src="index.js" defer></script>
+  <script src="index.js"></script>
 </body>
 </html>

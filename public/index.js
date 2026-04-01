@@ -42,8 +42,23 @@ let currentGeneratedNote = null;
  * Loads notes and sets up event listeners
  */
 document.addEventListener('DOMContentLoaded', () => {
-  loadNotes();
-  setupEventListeners();
+  // Handle frontpage navigation
+  const enterAppBtn = document.getElementById('enterAppBtn');
+  const frontpageContainer = document.querySelector('.frontpage-container');
+  const chatContainer = document.getElementById('chatContainer');
+
+  if (enterAppBtn) {
+    enterAppBtn.addEventListener('click', () => {
+      frontpageContainer.style.display = 'none';
+      chatContainer.style.display = 'flex';
+      loadNotes();
+      setupEventListeners();
+    });
+  } else {
+    // Direct to app if frontpage elements not found
+    loadNotes();
+    setupEventListeners();
+  }
 });
 
 /**
